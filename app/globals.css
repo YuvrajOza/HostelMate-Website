@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: 248 250 252;
+    /* #F8FAFC */
+    --foreground: 15 23 42;
+    /* slate-900 */
+}
+
+.dark {
+    --background: 11 18 32;
+    /* dark navy */
+    --foreground: 226 232 240;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+@layer utilities {
+    .container-page {
+        @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    }
+
+    .card-surface {
+        @apply rounded-2xl border border-slate-200/70 bg-white shadow-soft dark:border-slate-800 dark:bg-[#111A2E];
+    }
+
+    .focus-ring {
+        @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#0B1220];
+    }
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(148 163 184 / 0.35);
+    border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: rgb(71 85 105 / 0.5);
+}
